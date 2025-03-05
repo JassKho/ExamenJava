@@ -1,0 +1,195 @@
+/* styles.css */
+:root {
+    --primary-color: #ff6f61; /* Coral */
+    --secondary-color: #6b5b95; /* Purple */
+    --background-color: #f8f8f8;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --border-radius: 15px;
+    --hover-effect: brightness(90%);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-out;
+}
+
+form {
+    background: var(--card-bg);
+    padding: 30px 80px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-out;
+}
+
+form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(107, 91, 149, 0.5);
+    outline: none;
+}
+
+button {
+    background: var(--gradient);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.quote {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    margin-top: 30px;
+    text-align: center;
+    font-style: italic;
+    color: var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+.quote:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background: var(--gradient);
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+tr:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet de vague pour le fond */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 111, 97, 0.1), rgba(107, 91, 149, 0.1));
+    z-index: -1;
+    pointer-events: none;
+}
