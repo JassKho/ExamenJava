@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Conversation</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Petite pause culture</h1>
+    <form th:action="@{/sendMessage}" method="post">
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" id="username" name="username" placeholder="Entrez votre nom" required>
+        
+        <label for="message">Votre message:</label>
+        <input type="text" id="message" name="message" placeholder="Écrivez votre message ici" required>
+        
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <div th:if="${quote}" class="quote">
+        <h2>Citation inspirantes:</h2>
+        <p th:text="${quote}"></p>
+    </div>
+</body>
+</html>
